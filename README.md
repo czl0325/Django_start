@@ -92,6 +92,9 @@ pymysql.install_as_MySQLdb()
 ```
 
 
-
+```
+出现错误：mysqlclient 1.3.13 or newer is required; you have 0.9.3.
+参考解决方法：https://blog.csdn.net/lijing742180/article/details/91966031
+```
 
 
