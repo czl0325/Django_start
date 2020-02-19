@@ -19,15 +19,80 @@
             </li>
         {% endfor %}
     </ul>
-    <br>
-    <br>
+    <br><br>
+    <h1>基础查询</h1>
     <h3>查询编号为1的图书。</h3>
     <h5>BookInfo.objects.filter(id=1)</h5>
     <h5>{{ a1 }}</h5>
-    <br>
-    <br>
-    <h3>查询编号为1的图书。</h3>
+    <br><br>
+    <h3>查询书名包含'传'的图书。</h3>
+    <h5>BookInfo.objects.filter(btitle__contains='传')</h5>
+    <h5>{{ a2 }}</h5>
+    <br><br>
+    <h3>查询书名以'部'结尾的图书</h3>
+    <h5>BookInfo.objects.filter(btitle__endswith='部')</h5>
+    <h5>{{ a3 }}</h5>
+    <br><br>
+    <h3>查询书名不为空的图书。</h3>
     <h5>BookInfo.objects.filter(id=1)</h5>
-    <h5>{{ a1 }}</h5>
+    <h5>{{ a4 }}</h5>
+    <br><br>
+    <h3>查询编号为1或3或5的图书</h3>
+    <h5>BookInfo.objects.filter(id__in=[1, 3, 5])</h5>
+    <h5>{{ a5 }}</h5>
+    <br><br>
+    <h1>比较查询</h1>
+    <h3>查询编号大于3的图书</h3>
+    <h5>BookInfo.objects.filter(id__gt=3)</h5>
+    <h5>{{ b1 }}</h5>
+    <br><br>
+    <h3>查询编号不等于3的图书</h3>
+    <h5>BookInfo.objects.exclude(id=3)</h5>
+    <h5>{{ b2 }}</h5>
+    <br><br>
+    <h3>查询1980年发表的图书</h3>
+    <h5>BookInfo.objects.exclude(id=3)</h5>
+    <h5>{{ b3 }}</h5>
+    <br><br>
+    <h3>查询1980年1月1日后发表的图书</h3>
+    <h5>BookInfo.objects.exclude(id=3)</h5>
+    <h5>{{ b4 }}</h5>
+    <br><br>
+    <h1>F对象</h1>
+    <h3>查询阅读量大于等于评论量的图书</h3>
+    <h5>BookInfo.objects.filter(bread__gt=F('bcomment'))</h5>
+    <h5>{{ c1 }}</h5>
+    <br><br>
+    <h3>查询阅读量大于2倍评论量的图书</h3>
+    <h5>BookInfo.objects.exclude(id=3)</h5>
+    <h5>{{ c1 }}</h5>
+    <br><br>
+    <h1>F对象</h1>
+    <h1>多个过滤器逐个调用表示逻辑与关系，同sql语句中where部分的and关键字。</h1>
+    <h3>查询阅读量大于20，并且编号小于3的图书</h3>
+    <h5>BookInfo.objects.filter(Q(bread__gt=20) & Q(id__lt=3))</h5>
+    <h5>{{ d1 }}</h5>
+    <br><br>
+    <h3>查询编号不等于3的图书</h3>
+    <h5>BookInfo.objects.filter(~Q(id=3))</h5>
+    <h5>{{ d2 }}</h5>
+    <br><br>
+    <h1>F对象</h1>
+    <h1>使用aggregate()过滤器调用聚合函数。聚合函数包括：Avg，Count，Max，Min，Sum</h1>
+    <h3>查询图书的总阅读量</h3>
+    <h5>BookInfo.objects.aggregate(Sum('bread'))</h5>
+    <h5>{{ e1 }}</h5>
+    <br><br>
+    <h3>查询图书总数</h3>
+    <h5>BookInfo.objects.count()</h5>
+    <h5>{{ e2 }}</h5>
+    <br><br>
+    <h3>查询图书，要求图书中英雄的描述包含'八'。</h3>
+    <h5>BookInfo.objects.filter(heroinfo__hcomment__contains='八')</h5>
+    <h5>{{ f1 }}</h5>
+    <br><br>
+    <h3>查询书名为“天龙八部”的所有英雄</h3>
+    <h5>HeroInfo.objects.filter(hbook__btitle='天龙八部')</h5>
+    <h5>{{ f2 }}</h5>
 </body>
 </html>
