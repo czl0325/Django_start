@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    所有的书籍
+    <ul>
+        {% for book in books %}
+            <li>
+                <a href="/hero/{{ book.id }}">{{ book.btitle }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <br>
+    <br>
+    <h3>查询编号为1的图书。</h3>
+    <h5>BookInfo.objects.filter(id=1)</h5>
+    <h5>{{ a1 }}</h5>
+    <br>
+    <br>
+    <h3>查询编号为1的图书。</h3>
+    <h5>BookInfo.objects.filter(id=1)</h5>
+    <h5>{{ a1 }}</h5>
+</body>
+</html>

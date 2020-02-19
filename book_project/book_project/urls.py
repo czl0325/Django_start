@@ -21,4 +21,5 @@ from booktest import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     re_path('^index$', views.index),
+    re_path('^hero/(\d+)$', views.hero)
 ]

@@ -99,12 +99,12 @@ pymysql.install_as_MySQLdb()
 安装mysql之前windows系统还必须安装visual studio
 ```
 
-以上步骤都做完后，开始生成迁移文件
-python manage.py makemigrations
-在生成迁移文件之前你要在数据库中先创建对应的数据库名，这里是CREATE DATABASE book;
-生成的迁移文件在booktest/migrations/0001_initial.py中
-然后执行迁移
-python manage.py migrate
+以上步骤都做完后，开始生成迁移文件<br>
+python manage.py makemigrations<br>
+在生成迁移文件之前你要在数据库中先创建对应的数据库名，这里是CREATE DATABASE book;<br>
+生成的迁移文件在booktest/migrations/0001_initial.py中<br>
+然后执行迁移<br>
+python manage.py migrate<br>
 看到一切都OK。可以查看数据库表，发现创建成功。
 
 
@@ -199,3 +199,41 @@ urlpatterns = [
 ]
 ```
 如上re_path表示匹配index的路径
+
+
+
+### 创建模板
+
+在项目根目录下创建templates文件夹，在里面新建html文件，如index.html
+在view的函数里return的时候用render来return
+
+项目写了基本的django数据库操作，可以看看。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -10,6 +10,9 @@ class BookInfo(models.Model):
     bcomment = models.PositiveIntegerField(default=0)  # 评论量
     isDelete = models.BooleanField(default=False)  # 逻辑删除
 
+    def __str__(self):
+        return "书名：{btitle}，发行日期：{bpub_date}，阅读量：{bread}，评论量：{bcomment}".format(btitle=self.btitle,bpub_date=self.bpub_date,bread=self.bread,bcomment=self.bcomment)
+
 
 # 定义英雄模型类HeroInfo
 class HeroInfo(models.Model):
