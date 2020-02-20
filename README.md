@@ -100,11 +100,15 @@ pymysql.install_as_MySQLdb()
 
 
 以上步骤都做完后，开始生成迁移文件<br>
-python manage.py makemigrations<br>
+```
+python3 manage.py makemigrations
+```
 在生成迁移文件之前你要在数据库中先创建对应的数据库名，这里是CREATE DATABASE book;<br>
 生成的迁移文件在booktest/migrations/0001_initial.py中<br>
 然后执行迁移<br>
-python manage.py migrate<br>
+```
+python3 manage.py migrate
+```
 看到一切都OK。可以查看数据库表，发现创建成功。
 
 
@@ -208,28 +212,6 @@ urlpatterns = [
 在view的函数里return的时候用render来return
 
 项目写了基本的django数据库操作，可以看看。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
