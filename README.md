@@ -56,9 +56,9 @@ INSTALLED_APPS = [
 
 #### 运行服务器
 
-python manage.py runserver 
+python3 manage.py runserver 
 运行成功后可以在http://127.0.0.1:8000 查看，默认是8000端口，可以自行设置端口，如
-python manage.py runserver 127.0.0.1:8001
+python3 manage.py runserver 127.0.0.1:8001
 
 
 ### 2.把数据库切换成mysql
@@ -92,12 +92,12 @@ pymysql.install_as_MySQLdb()
 ```
 
 
-```
-出现错误：mysqlclient 1.3.13 or newer is required; you have 0.9.3.
+###### 出现错误：mysqlclient 1.3.13 or newer is required; you have 0.9.3.
 参考解决方法：https://blog.csdn.net/lijing742180/article/details/91966031
-另外安装mysql，教程：https://www.cnblogs.com/zhangkanghui/p/9613844.html
+###### 安装mysql，
+教程：https://www.cnblogs.com/zhangkanghui/p/9613844.html. <br>
 安装mysql之前windows系统还必须安装visual studio
-```
+
 
 以上步骤都做完后，开始生成迁移文件<br>
 python manage.py makemigrations<br>
