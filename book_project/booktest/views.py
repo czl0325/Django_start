@@ -37,3 +37,6 @@ def index(request):
 def hero(request, book_id):
     heros = HeroInfo.objects.filter(hbook=book_id)
     return render(request, 'hero.html', {"heros": heros})
+
+
+
