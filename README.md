@@ -56,9 +56,9 @@ INSTALLED_APPS = [
 
 #### 运行服务器
 
-python manage.py runserver 
+python3 manage.py runserver 
 运行成功后可以在http://127.0.0.1:8000 查看，默认是8000端口，可以自行设置端口，如
-python manage.py runserver 127.0.0.1:8001
+python3 manage.py runserver 127.0.0.1:8001
 
 
 ### 2.把数据库切换成mysql
@@ -92,19 +92,23 @@ pymysql.install_as_MySQLdb()
 ```
 
 
-```
-出现错误：mysqlclient 1.3.13 or newer is required; you have 0.9.3.
+###### 出现错误：mysqlclient 1.3.13 or newer is required; you have 0.9.3.
 参考解决方法：https://blog.csdn.net/lijing742180/article/details/91966031
-另外安装mysql，教程：https://www.cnblogs.com/zhangkanghui/p/9613844.html
+###### 安装mysql，
+教程：https://www.cnblogs.com/zhangkanghui/p/9613844.html. <br>
 安装mysql之前windows系统还必须安装visual studio
-```
+
 
 以上步骤都做完后，开始生成迁移文件<br>
-python manage.py makemigrations<br>
+```
+python3 manage.py makemigrations
+```
 在生成迁移文件之前你要在数据库中先创建对应的数据库名，这里是CREATE DATABASE book;<br>
 生成的迁移文件在booktest/migrations/0001_initial.py中<br>
 然后执行迁移<br>
-python manage.py migrate<br>
+```
+python3 manage.py migrate
+```
 看到一切都OK。可以查看数据库表，发现创建成功。
 
 
@@ -208,28 +212,6 @@ urlpatterns = [
 在view的函数里return的时候用render来return
 
 项目写了基本的django数据库操作，可以看看。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
