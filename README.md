@@ -108,7 +108,7 @@ python3 manage.py makemigrations
 然后执行迁移<br>
 
 - No changes detected错误
-    - 重点（用pycharm创建的工程，没有创建app导致这个错误，使用命令`python3 manage.py makemigrations --empty booktest`解决，这里的booktest是我的项目名
+    - 重点（用pycharm创建的工程，没有创建app导致这个错误，使用命令`python3 manage.py makemigrations --empty booktest`解决，这里的booktest是我的项目名，这样之后要再执行一次`python3 manage.py makemigrations `，才能生成迁移文件（重点！！！）
     <br>
 ```
 python3 manage.py migrate
