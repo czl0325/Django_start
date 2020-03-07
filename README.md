@@ -106,6 +106,10 @@ python3 manage.py makemigrations
 在生成迁移文件之前你要在数据库中先创建对应的数据库名，这里是CREATE DATABASE book;<br>
 生成的迁移文件在booktest/migrations/0001_initial.py中<br>
 然后执行迁移<br>
+
+- No changes detected错误
+    - 重点（用pycharm创建的工程，没有创建app导致这个错误，使用命令`python3 manage.py makemigrations --empty booktest`解决，这里的booktest是我的项目名
+    <br>
 ```
 python3 manage.py migrate
 ```
