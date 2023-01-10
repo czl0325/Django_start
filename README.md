@@ -113,6 +113,19 @@ python3 manage.py makemigrations
 ```
 python3 manage.py migrate
 ```
+
+- TABLE ‘DJANGO_CONTENT_TYPE’ ALREADY EXISTS
+    - 这是因为你改了表里面的字段，重新构建会报此错误
+```sh
+# 解决方法
+# 1. 先删除migrations文件夹内生成的迁移文件
+# 2. 执行命令
+python3 manage.py makemigrations --fake
+python3 manage.py migrate  --fake
+# 3. 再次执行
+python3 manage.py makemigrations
+python3 manage.py migrate
+```
 看到一切都OK。可以查看数据库表，发现创建成功。
 
 
